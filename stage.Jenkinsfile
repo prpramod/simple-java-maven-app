@@ -4,6 +4,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn -Denforcer.skip=true -B -DskipTests clean package'
+                sleep(10)
+                echo 'Woke up from sleep'
             }
         }
         stage('Test') {
